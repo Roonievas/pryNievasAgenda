@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +19,7 @@ namespace pryNievasAgenda
 
 
         public string nombreBaseDeDatos;
-        public void ConectarBD()
+        public void ConectarBD(ToolStripStatusLabel label)
         {
             try
             {
@@ -29,11 +30,13 @@ namespace pryNievasAgenda
                 nombreBaseDeDatos = coneccionBaseDatos.Database;
 
 
-                MessageBox.Show("Conectado a " + nombreBaseDeDatos);
+                label.Text = "Conectado a base de datos";
+                label.BackColor = System.Drawing.Color.GreenYellow;
             }
             catch (Exception error)
             {
-                MessageBox.Show("Tiene un errorcito - " + error.Message);
+                label.Text = "Error al conectar " + error.Message;
+                label.BackColor = System.Drawing.Color.DarkRed;
             }
 
         }

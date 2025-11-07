@@ -13,6 +13,7 @@ namespace pryNievasAgenda
 {
     public partial class frmAgenda : Form
     {
+        clsConexionBD clsConexionBD = new clsConexionBD();
         private string cadenaConexion = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../BDAgenda.accdb";
         public frmAgenda()
         {
@@ -163,8 +164,8 @@ namespace pryNievasAgenda
 
         private void frmAgenda_Load(object sender, EventArgs e)
         {
+            clsConexionBD.ConectarBD(toolStripStatusLabelConex);
             clsConexionBD clsConexionBD_V2 = new clsConexionBD();
-            clsConexionBD_V2.ConectarBD();
             CargarGrilla();
             timerAvisos.Start();
 

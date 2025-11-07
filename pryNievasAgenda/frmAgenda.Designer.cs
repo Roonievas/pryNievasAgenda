@@ -37,13 +37,17 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.timerAvisos = new System.Windows.Forms.Timer(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabelConex = new System.Windows.Forms.ToolStripStatusLabel();
             this.gbAgenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbAgenda
             // 
             this.gbAgenda.BackColor = System.Drawing.Color.LightGreen;
+            this.gbAgenda.Controls.Add(this.statusStrip1);
             this.gbAgenda.Controls.Add(this.btnSalir);
             this.gbAgenda.Controls.Add(this.btnEliminar);
             this.gbAgenda.Controls.Add(this.btnAgregar);
@@ -119,6 +123,23 @@
             // 
             this.timerAvisos.Interval = 60000;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelConex});
+            this.statusStrip1.Location = new System.Drawing.Point(3, 521);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(853, 26);
+            this.statusStrip1.TabIndex = 9;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabelConex
+            // 
+            this.toolStripStatusLabelConex.Name = "toolStripStatusLabelConex";
+            this.toolStripStatusLabelConex.Size = new System.Drawing.Size(151, 20);
+            this.toolStripStatusLabelConex.Text = "toolStripStatusLabel1";
+            // 
             // frmAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -133,6 +154,8 @@
             this.gbAgenda.ResumeLayout(false);
             this.gbAgenda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -146,5 +169,7 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.Timer timerAvisos;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelConex;
     }
 }
